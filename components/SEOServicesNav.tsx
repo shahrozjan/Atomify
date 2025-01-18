@@ -1,9 +1,14 @@
+import clsx from "clsx";
 import Link from "next/link";
 import React from "react";
 
-function SEOServicesNav() {
+function SEOServicesNav({ isHeader = false }: Readonly<{ isHeader?: boolean }>) {
   return (
-    <div className="p-4 flex justify-center space-x-4 bg-gray-200">
+    <div
+      className={clsx({
+        "p-4 flex justify-center space-x-8 bg-gray-200": isHeader,
+      })}
+    >
       <Link href="/seo-services/audit">
         <div>SEO Audit Services</div>
       </Link>

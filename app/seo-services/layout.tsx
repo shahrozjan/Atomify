@@ -11,7 +11,7 @@ export default function SEOServicesLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <div>
-      <SEOServicesNav />
+      <SEOServicesNav isHeader={true} />
       {children}
     </div>
   );

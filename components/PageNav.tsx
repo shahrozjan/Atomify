@@ -1,9 +1,14 @@
+import clsx from "clsx";
 import Link from "next/link";
 import React from "react";
 
-function HeaderNav() {
+function PageNav({ isHeader = false }: Readonly<{ isHeader?: boolean }>) {
   return (
-    <nav className="flex space-x-8">
+    <nav
+      className={clsx({
+        "flex space-x-8 font-bold": isHeader,
+      })}
+    >
       <Link href="/">
         <div>Home</div>
       </Link>
@@ -26,4 +31,4 @@ function HeaderNav() {
   );
 }
 
-export default HeaderNav;
+export default PageNav;

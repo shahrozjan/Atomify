@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderNav from "./HeaderNav";
+import PageNav from "./PageNav";
 import Image from "next/image";
 
 function Header() {
@@ -17,7 +17,7 @@ function Header() {
         </div>
         <div>Atomify</div>
       </div>
-      <HeaderNav />
+      <PageNav isHeader={true} />
     </header>
   );
 }
