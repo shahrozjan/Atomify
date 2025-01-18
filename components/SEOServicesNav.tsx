@@ -3,7 +3,7 @@ import React from "react";
 
 function SEOServicesNav() {
   return (
-    <div className="bg-slate-500 border-b border-black">
+    <div className="p-4 flex justify-center space-x-4 bg-gray-200">
       <Link href="/seo-services/audit">
         <div>SEO Audit Services</div>
       </Link>

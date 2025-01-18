@@ -3,7 +3,7 @@ import React from "react";
 
 function HeaderNav() {
   return (
-    <nav>
+    <nav className="flex space-x-8">
       <Link href="/">
         <div>Home</div>
       </Link>
