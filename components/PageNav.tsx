@@ -22,10 +22,10 @@ function PageNav({ isHeader = false }: Readonly<{ isHeader?: boolean }>) {
         <div>Bulk SEO Keywords</div>
       </Link>
       <Link href="/about-us">
-        <div>About Us</div>
+        <div>About</div>
       </Link>
       <Link href="/contact-us">
-        <div>Contact</div>
+        <div>Contact Us</div>
       </Link>
     </nav>
   );
