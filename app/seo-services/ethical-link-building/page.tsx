@@ -1,5 +1,3 @@
-"use client";
-
 export default function EthicalLinkBuildingServices() {
   return (
     <div className="min-h-screen bg-gradient-to-r from-blue-500 via-green-400 to-teal-500 text-white">

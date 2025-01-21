@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function Header() {
   return (
-    <header className="fixed w-screen top-0 left-0">
+    <header className="fixed w-screen top-0 left-0 z-50">
       <div className="flex justify-center items-center bg-white md:space-x-60 shadow-lg">
         <div className="p-4 flex items-center space-x-2">
           <div>

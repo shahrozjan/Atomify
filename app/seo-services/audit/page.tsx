@@ -1,8 +1,34 @@
-"use client";
-
+import clsx from "clsx";
 import Link from "next/link";
 
 export default function SEOServices() {
+  const cardData = [
+    {
+      title: "Competitor Analysis",
+      description:
+        "Discover how your competitors are outperforming you and identify areas for growth.",
+    },
+    {
+      title: "Technical Audit",
+      description:
+        "Detect broken links, slow loading pages, and other technical glitches.",
+    },
+    {
+      title: "On-Page SEO Analysis",
+      description: "Ensure proper use of keywords, meta tags, and headers.",
+    },
+    {
+      title: "Backlink Profile Audit",
+      description:
+        "Evaluate your link-building efforts to eliminate harmful links.",
+    },
+    {
+      title: "Content Audit",
+      description:
+        "Find content gaps and keyword opportunities to strengthen your strategy.",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-r from-blue-500 via-green-400 to-teal-500 text-white">
       <div className="container mx-auto px-4 py-16">
@@ -29,40 +55,21 @@ export default function SEOServices() {
             technical issues, and content gaps to empower you with actionable
             insights.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white text-black rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-bold mb-2">Competitor Analysis</h3>
-              <p className="text-sm">
-                Discover how your competitors are outperforming you and identify
-                areas for growth.
-              </p>
-            </div>
-            <div className="bg-white text-black rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-bold mb-2">Technical Audit</h3>
-              <p className="text-sm">
-                Detect broken links, slow loading pages, and other technical
-                glitches.
-              </p>
-            </div>
-            <div className="bg-white text-black rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-bold mb-2">On-Page SEO Analysis</h3>
-              <p className="text-sm">
-                Ensure proper use of keywords, meta tags, and headers.
-              </p>
-            </div>
-            <div className="bg-white text-black rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-bold mb-2">Backlink Profile Audit</h3>
-              <p className="text-sm">
-                Evaluate your link-building efforts to eliminate harmful links.
-              </p>
-            </div>
-            <div className="bg-white text-black rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-bold mb-2">Content Audit</h3>
-              <p className="text-sm">
-                Find content gaps and keyword opportunities to strengthen your
-                strategy.
-              </p>
-            </div>
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> */}
+          <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-8">
+            {cardData.map((card, index) => (
+              <div
+                key={index}
+                className={clsx(
+                  "bg-white text-black rounded-lg shadow-lg p-6 md:col-span-2 lg:col-span-2",
+                  index === 4 ? "md:col-start-2" : "",
+                  index === 3 ? "lg:col-start-2" : "",
+                )}
+              >
+                <h3 className="text-xl font-bold mb-2">{card.title}</h3>
+                <p className="text-sm">{card.description}</p>
+              </div>
+            ))}
           </div>
         </section>
 
