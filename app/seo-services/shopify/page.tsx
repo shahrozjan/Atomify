@@ -11,7 +11,7 @@ export default function ShopifySEOServices() {
             Your Shopify store deserves to shine in search results. With
             tailored Shopify SEO strategies, we help you attract more visitors,
             convert them into loyal customers, and skyrocket your online sales.
-            Here's how we make your store stand out:
+            Here&rsquo;s how we make your store stand out:
           </p>
         </div>
 
@@ -22,7 +22,7 @@ export default function ShopifySEOServices() {
           </h2>
           <p className="text-lg md:text-xl font-light text-center">
             Every successful SEO campaign begins with a detailed audit. Our team
-            analyzes your store's current performance, identifying areas to
+            analyzes your store&rsquo;s current performance, identifying areas to
             optimize, from technical issues to content gaps. We ensure your site
             is search-engine-friendly and aligned with the latest SEO best
             practices.

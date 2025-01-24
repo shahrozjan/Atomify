@@ -8,7 +8,7 @@ export default function EcommerceServices() {
             E-Commerce SEO: Drive More Traffic, Boost Sales, and Outrank the Competition
           </h1>
           <p className="text-lg md:text-xl font-light">
-            E-commerce SEO is the backbone of your online store's success. By
+            E-commerce SEO is the backbone of your online store&rsquo;s success. By
             optimizing your website for search engines, you can attract
             high-intent customers, increase visibility, and maximize
             conversions. Let us help you turn clicks into customers.

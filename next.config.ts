@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Enable static export for `next export`
+  output: "export",
+
+  // Add other configuration options if needed
+  reactStrictMode: true,
+  swcMinify: true,
+  trailingSlash: true,
+  // Example: Custom base path (if hosting in a subdirectory)
+  // basePath: "/subdirectory",
 };
 
 export default nextConfig;

@@ -8,7 +8,7 @@ export default function LocalSEOServices() {
             Local SEO Services: Boost Your Business Visibility in Your Community
           </h1>
           <p className="text-lg md:text-xl font-light">
-            In today’s competitive digital landscape, Local SEO or GMB is
+            In today&rsquo;s competitive digital landscape, Local SEO or GMB is
             essential for businesses aiming to attract nearby customers. By
             optimizing your online presence, we help ensure your business ranks
             higher in local search results, driving foot traffic and increasing
@@ -23,7 +23,7 @@ export default function LocalSEOServices() {
           </h2>
           <p className="text-lg md:text-xl font-light text-center">
             Over 46% of all Google searches are for local businesses. Whether
-            you're running a café, a retail shop, or offering services,
+            you&rsquo;re running a café, a retail shop, or offering services,
             appearing in local search results is crucial. Local SEO ensures
             potential customers find your business when they search for services
             near them, giving you an edge over competitors.

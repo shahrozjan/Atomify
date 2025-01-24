@@ -47,7 +47,7 @@ export default function SmallBusinessSEOServices() {
             Most small businesses thrive on local customers, and that’s where
             our local SEO expertise comes in. We optimize your Google My
             Business profile, create location-specific content, and ensure you
-            appear in local searches. Whether you're a boutique, café, or
+            appear in local searches. Whether you&rsquo;re a boutique, café, or
             service provider, our strategies will drive foot traffic and calls
             to your doorstep.
           </p>

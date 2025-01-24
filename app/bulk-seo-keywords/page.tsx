@@ -8,9 +8,9 @@ export default function BulkSEOKeywords() {
             Unlock the Power of Bulk SEO Keywords for Maximum Visibility
           </h1>
           <p className="text-lg md:text-xl font-light">
-            In today’s competitive online marketplace, using bulk SEO keywords
+            In today&rsquo;s competitive online marketplace, using bulk SEO keywords
             strategically is essential to gain visibility and improve your
-            website’s ranking on search engines. At Atomify, we specialize in
+            website&rsquo;s ranking on search engines. At Atomify, we specialize in
             offering high-quality bulk keyword services that drive targeted
             traffic and boost your online presence.
           </p>
@@ -27,7 +27,7 @@ export default function BulkSEOKeywords() {
             to your business, increasing your chances of ranking on search
             engine result pages (SERPs). By focusing on high-volume, relevant
             keywords, you can optimize multiple pages of your website and
-            enhance your content's reach, ensuring that your target audience
+            enhance your content&rsquo;s reach, ensuring that your target audience
             finds you easily.
           </p>
         </section>
@@ -42,8 +42,8 @@ export default function BulkSEOKeywords() {
             approach to bulk keyword research is personalized. Our team conducts
             in-depth keyword research, considering factors like search volume,
             competition, and user intent, to create a tailored list that suits
-            your business needs. Whether you're looking for long-tail keywords
-            or high-competition terms, we've got you covered.
+            your business needs. Whether you&rsquo;re looking for long-tail keywords
+            or high-competition terms, we&rsquo;ve got you covered.
           </p>
         </section>
 

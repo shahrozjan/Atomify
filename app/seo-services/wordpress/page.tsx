@@ -5,7 +5,7 @@ export default function WordPressSEOServices() {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
-            Unlock Your Website's Potential with WordPress SEO Services
+            Unlock Your Website&rsquo;s Potential with WordPress SEO Services
           </h1>
           <p className="text-lg md:text-xl font-light">
             Your Website, Powered by Search
@@ -20,9 +20,9 @@ export default function WordPressSEOServices() {
           <p className="text-lg md:text-xl font-light text-center">
             Your WordPress website deserves a custom SEO approach that fits its
             unique structure and functionality. Our team specializes in crafting
-            strategies that align with WordPress's framework, utilizing built-in
+            strategies that align with WordPress&rsquo;s framework, utilizing built-in
             tools like Yoast SEO, Rank Math, and other plugins. We optimize your
-            content, metadata, and URLs to improve your website's visibility on
+            content, metadata, and URLs to improve your website&rsquo;s visibility on
             search engines.
           </p>
         </section>
