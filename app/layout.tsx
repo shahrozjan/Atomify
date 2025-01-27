@@ -27,11 +27,9 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.png" />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen w-screen`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} w-full min-h-screen overflow-y-clip`}>
         <Header />
-        <div className="mt-16">{children}</div>
+        <div>{children}</div>
         <Footer />
       </body>
     </html>
