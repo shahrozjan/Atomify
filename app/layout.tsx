@@ -23,11 +23,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scrollbar-gutter-stable">
       <head>
         <link rel="icon" href="/favicon.png" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} w-full min-h-screen overflow-y-clip`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header />
         <div>{children}</div>
         <Footer />

@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes,faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import clsx from "clsx";
 import PageNav from "./PageNav";
 
@@ -38,9 +38,10 @@ function Header() {
           {/* Desktop button */}
           <a
             href="mailto:info@yourwebsite.com?subject=Get a Proposal"
-            className="hidden md:inline-block whitespace-nowrap bg-orange-500 text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-orange-600 transition-colors"
+            className="hidden md:inline-flex items-center whitespace-nowrap bg-orange-500 text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-orange-600 transition-colors"
           >
-            Get Proposal
+            Get Free Proposal
+            <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
           </a>
 
           {/* Mobile hamburger button (shown below md) */}
@@ -57,7 +58,7 @@ function Header() {
       {/* Mobile sidebar navigation */}
       <div
         className={clsx(
-          "fixed top-0 right-0 w-64 bg-white shadow-xl z-50 transform",
+          "fixed top-0 right-0 w-64 bg-white shadow-xl z-50 transform h-full",
           isNavOpen ? "translate-x-0" : "translate-x-full",
           "transition-transform duration-300 ease-in-out md:hidden"
         )}
@@ -72,7 +73,7 @@ function Header() {
           </button>
         </div>
         <div className="p-4">
-          <PageNav isSidebar />
+          <PageNav isSidebar toggleFunction={toggleNav}/>
         </div>
       </div>
     </header>

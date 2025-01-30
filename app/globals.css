@@ -18,24 +18,16 @@
   background: #000 !important;
   outline: 1px solid #f00 !important;
 } */
-* {
+/* * {
   outline: 1px solid red !important;
-}
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+} */
 /* Prevent horizontal overflow */
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-/* Ensure images and media don't overflow */
-img, video, iframe {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Prevent flex/grid overflows */
-.flex-container, .grid-container {
-  min-width: 0;
+/* Force the scrollbar to always be visible */
+html {
+  overflow-y: scroll;
 }
 /* styles/globals.css */
 body {
