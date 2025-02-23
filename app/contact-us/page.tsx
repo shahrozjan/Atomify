@@ -1,10 +1,9 @@
 "use client";
-import { useForm, Controller } from "react-hook-form";
-import { z } from "zod";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
+import { z } from "zod";
 
+// Define the Zod schema for form validation
 const contactSchema = z
   .object({
     name: z.string().min(2, "Name must be at least 2 characters"),
@@ -14,11 +13,11 @@ const contactSchema = z
       .optional()
       .or(z.literal("").transform(() => undefined)),
     phone: z.string().nonempty("Phone number is required"),
-    companyName: z.string().optional(),
+    companyName: z.string().nonempty("Company Name is required"),
     message: z.string().min(10, "Message must be at least 10 characters"),
   })
   .refine(
-    (data) => data.companyName || data.phone || data.email,
+    (data) => data.phone || data.email,
     "At least one of Company Name, Phone, or Email is required"
   );
 
@@ -28,113 +27,98 @@ export default function Contact() {
   const {
     register,
     handleSubmit,
-    control,
     formState: { errors },
   } = useForm<ContactForm>({
     resolver: zodResolver(contactSchema),
   });
 
   const onSubmit = (data: ContactForm) => {
-    console.log("Form submitted:", data);
-    // Add your form submission logic here (e.g., API call)
+    // Format the subject and body as specified
+    const subject = `${data.name} - ${data.companyName}`;
+    const body = `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\nCompany Name: ${data.companyName}\nMessage: ${data.message}`;
+    const mailtoLink = `mailto:shahrozjan67@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
   };
 
   return (
-    <div className="flex justify-center items-center bg-blue-500 h-screen">
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="bg-white p-6 rounded shadow-md w-96"
-      >
-        <h1 className="text-xl font-bold mb-4">Contact Us</h1>
-
-        {/* Name */}
-        <div className="mb-4">
-          <label className="block text-gray-700">Name</label>
-          <input
-            type="text"
-            {...register("name")}
-            className="w-full px-4 py-2 border rounded"
-          />
-          {errors.name && (
-            <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
-          )}
-        </div>
-
-        {/* Email */}
-        <div className="mb-4">
-          <label className="block text-gray-700">Email</label>
-          <input
-            type="email"
-            {...register("email")}
-            className="w-full px-4 py-2 border rounded"
-          />
-          {errors.email && (
-            <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
-          )}
-        </div>
-
-        {/* Phone */}
-        <div className="mb-4">
-          <label className="block text-gray-700">Phone</label>
-          <Controller
-            name="phone"
-            control={control}
-            render={({ field }) => (
-              <PhoneInput
-                {...field}
-                country={"us"}
-                placeholder="Enter phone number"
-                enableSearch
-                inputClass="w-full px-4 py-2 border rounded"
-              />
+    <div className="min-h-screen bg-gradient-to-r from-blue-500 to-teal-500 flex flex-col items-center justify-center px-2 pt-4">
+      <div className="w-full max-w-md bg-white p-6 rounded shadow-md">
+        <h1 className="text-2xl font-bold mb-6 text-center">Contact Us</h1>
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Name*
+            </label>
+            <input
+              {...register("name")}
+              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm px-2"
+            />
+            {errors.name && (
+              <p className="text-red-500 text-sm">{errors.name.message}</p>
             )}
-          />
-          {errors.phone && (
-            <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
-          )}
-        </div>
-
-        {/* Company Name */}
-        <div className="mb-4">
-          <label className="block text-gray-700">Company Name</label>
-          <input
-            type="text"
-            {...register("companyName")}
-            className="w-full px-4 py-2 border rounded"
-          />
-          {errors.companyName && (
-            <p className="text-red-500 text-sm mt-1">
-              {errors.companyName.message}
-            </p>
-          )}
-        </div>
-
-        {/* Message */}
-        <div className="mb-4">
-          <label className="block text-gray-700">Message</label>
-          <textarea
-            {...register("message")}
-            rows={4}
-            className="w-full px-4 py-2 border rounded"
-          />
-          {errors.message && (
-            <p className="text-red-500 text-sm mt-1">
-              {errors.message.message}
-            </p>
-          )}
-        </div>
-
-        <button
-          type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded"
-        >
-          Submit
-        </button>
-
-        {errors.root && (
-          <p className="text-red-500 text-sm mt-4">{errors.root.message}</p>
-        )}
-      </form>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Email*
+            </label>
+            <input
+              type="email"
+              {...register("email")}
+              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm px-2"
+            />
+            {errors.email && (
+              <p className="text-red-500 text-sm">{errors.email.message}</p>
+            )}
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Phone*
+            </label>
+            <input
+              type="tel"
+              {...register("phone")}
+              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm px-2"
+            />
+            {errors.phone && (
+              <p className="text-red-500 text-sm">{errors.phone.message}</p>
+            )}
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Company Name*
+            </label>
+            <input
+              {...register("companyName")}
+              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm px-2"
+            />
+            {errors.companyName && (
+              <p className="text-red-500 text-sm">
+                {errors.companyName.message}
+              </p>
+            )}
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Message
+            </label>
+            <textarea
+              {...register("message")}
+              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm px-2"
+            />
+            {errors.message && (
+              <p className="text-red-500 text-sm">{errors.message.message}</p>
+            )}
+          </div>
+          <button
+            type="submit"
+            className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

@@ -34,7 +34,7 @@ export default function BlogWritingServices() {
     {
       title: "Improved Search Engine Visibility",
       description:
-        "Boost your website's presence on search engines with high-quality, SEO-optimized content.",
+        "Boost your website&apos;s presence on search engines with high-quality, SEO-optimized content.",
     },
     {
       title: "Tailored Content",
@@ -63,7 +63,7 @@ export default function BlogWritingServices() {
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
             SEO Blog Writing Services
           </h1>
-          <p className="text-lg md:text-xl font-light">
+          <p className="text-lg md:text-xl font-semibold">
             Elevate Your Online Presence with Visibility That Drives Opportunity
           </p>
         </div>
@@ -123,11 +123,11 @@ export default function BlogWritingServices() {
           <h2 className="text-5xl font-bold mb-4">
             Let&rsquo;s Write Your Success Story
           </h2>
-          <p className="text-lg md:text-xl font-light mb-8">
+          <p className="text-lg md:text-xl font-semibold mb-8">
             Partner with us for SEO blog writing that drives traffic, builds
             authority, and converts readers into loyal customers.
           </p>
-          <button className="bg-green-600 hover:bg-green-700 transition-colors text-white px-6 py-3 rounded-lg text-lg font-semibold">
+          <button className="bg-orange-600 hover:bg-orange-700 transition-colors text-white px-6 py-3 rounded-lg text-lg font-semibold">
             <Link href="/contact-us">
               <div>Contact Us</div>
             </Link>

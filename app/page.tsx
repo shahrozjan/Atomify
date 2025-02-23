@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import PackageCard from "@/components/PackageCard";
+import { SEOPackages } from "@/public/data";
 
 const Home = () => {
   const seoServices = [
@@ -20,12 +22,12 @@ const Home = () => {
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
             SEO That Delivers Results, Not Promises
           </h1>
-          <p className="text-lg md:text-xl font-light my-6">
+          <p className="text-lg md:text-xl font-semibold my-6">
             Unleash the full potential of your website and watch it soar with
             our expert SEO services.
           </p>
           <Link
-            href="mailto:info@yourwebsite.com?subject=Get a Proposal"
+            href="/contact-us"
             className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold text-lg transition-colors"
           >
             Get Proposal
@@ -66,14 +68,14 @@ const Home = () => {
               </div>
             ))}
           </div>
-          <div className="text-center mt-8">
+          {/* <div className="text-center mt-8">
             <Link
-              href="mailto:info@yourwebsite.com?subject=Free Website Audit"
+              href="/contact"
               className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold text-lg transition-colors"
             >
               Get Free Website Audit
             </Link>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -81,29 +83,29 @@ const Home = () => {
       <section className="py-16 bg-gray-100">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-            About Us: Your Trusted SEO Partner
+            Your Trusted SEO Partner
           </h2>
           <p className="text-lg md:text-xl font-light text-center mb-6">
             At Atomify, we specialize in delivering customized SEO solutions
             that meet the unique needs of businesses of all sizes. Whether
-            you&lsquo;re a startup or an established enterprise, our data-driven
+            you&apos;re a startup or an established enterprise, our data-driven
             approach helps you achieve long-term success.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-  {seoServices.map((service, index) => (
-    <Link key={index} href={service.path}>
-      <div className="bg-white shadow-lg rounded-lg p-6 text-center border border-gray-200 hover:shadow-xl transition-shadow cursor-pointer">
-        <h3 className="text-lg font-bold">{service.title}</h3>
-      </div>
-    </Link>
-  ))}
-</div>
+            {seoServices.map((service, index) => (
+              <Link key={index} href={service.path}>
+                <div className="bg-white shadow-lg rounded-lg p-6 text-center border border-gray-200 hover:shadow-xl transition-shadow cursor-pointer">
+                  <h3 className="text-lg font-bold">{service.title}</h3>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Monthly Packages Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20">
+      <section className="py-8 bg-teal-500">
+        {/* <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
             Our Monthly SEO Packages
           </h2>
@@ -133,19 +135,34 @@ const Home = () => {
                 className="bg-white shadow-lg rounded-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow"
               >
                 <h3 className="text-xl font-bold mb-4">{packageItem.title}</h3>
-                <p className="text-teal-500 font-bold text-2xl mb-4">
+                {/* <p className="text-teal-500 font-bold text-2xl mb-4">
                   {packageItem.price}
-                </p>
-                <p className="text-gray-700 mb-6">{packageItem.description}</p>
-                <Link
-                  href="mailto:info@yourwebsite.com?subject=Get a Proposal"
+                </p> */}
+                {/* <p className="text-gray-700 mb-6">{packageItem.description}</p> */}
+                {/* <Link
+                  href="/contact"
                   className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors block text-center"
                 >
                   Get Proposal
-                </Link>
-              </div>
-            ))}
-          </div>
+                </Link> */}
+              {/* </div> */}
+            {/* ))} */}
+          {/* </div> */}
+        {/* </div> */}
+        <div className="container mx-auto px-4 py-8">
+        <h1 className="text-4xl font-bold text-center text-white mb-12">SEO Packages</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {SEOPackages.map((pkg, index) => (
+            <PackageCard key={index} pkg={pkg} isMain={true}/>
+          ))}
+        </div>
+      </div>
+      <div className="text-center mt-auto pt-10">
+          <button className="bg-orange-600 hover:bg-orange-700 transition-colors text-white px-6 py-3 rounded-lg text-lg font-semibold">
+            <Link href="/seo-package">
+              <div>Learn About the Plans in Detail</div>
+            </Link>
+          </button>
         </div>
       </section>
 
@@ -153,13 +170,13 @@ const Home = () => {
       <section className="py-16 bg-teal-500 text-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-20 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Let’s Make Your Website Unstoppable…
+            Let&apos;s Make Your Website Unstoppable…
           </h2>
-          <p className="text-lg md:text-xl font-light mb-8">
-            Don’t wait—take the first step toward SEO success today!
+          <p className="text-lg md:text-xl font-semibold mb-8">
+            Don&apos;t wait—take the first step toward SEO success today!
           </p>
           <Link
-            href="mailto:info@yourwebsite.com?subject=Get a Free Quote"
+            href="/contact-us"
             className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold text-lg transition-colors"
           >
             Get a Free Quote

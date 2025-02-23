@@ -1,5 +1,5 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,15 +9,15 @@ import PageNav from "./PageNav";
 
 function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
-
+  const router = useRouter();
   const toggleNav = () => setIsNavOpen((prev) => !prev);
 
   return (
-    <header className="sticky top-0 left-0 z-50 bg-white shadow">
+    <header className="sticky top-0 left-0 z-50 bg-slate-100 shadow md:py-10 lg:py-0">
       {/* Main horizontal bar */}
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center">
         {/* Logo on the left */}
-        <div className="flex items-center space-x-2">
+        <div className="flex cursor-pointer items-center space-x-2" onClick={() => router.push("/")}>
           <Image
             src="/logo.png"
             alt="Atomify logo"
@@ -25,7 +25,13 @@ function Header() {
             height={40}
             className="rounded-full"
           />
-          <span className="font-bold text-lg sm:text-xl">Atomify</span>
+          <Image
+            src="/title.png"
+            alt="Atomify"
+            width={140}
+            height={50}
+            className=""/>
+          {/* <span className="font-bold text-lg sm:text-xl">Atomify</span> */}
         </div>
 
         {/* Centered navigation (desktop only) */}
@@ -37,10 +43,10 @@ function Header() {
         <div className="flex items-center ml-4">
           {/* Desktop button */}
           <a
-            href="mailto:info@yourwebsite.com?subject=Get a Proposal"
-            className="hidden md:inline-flex items-center whitespace-nowrap bg-orange-500 text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-orange-600 transition-colors"
+            href="/contact-us"
+            className="hidden md:inline-flex items-center whitespace-nowrap bg-green-600 hover:bg-green-700 transition-colors text-white font-semibold px-4 py-2 rounded-lg shadow"
           >
-            Get Free Proposal
+            Get A Free Proposal
             <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
           </a>
 
@@ -64,7 +70,7 @@ function Header() {
         )}
       >
         <div className="flex justify-between items-center p-4 border-b">
-          <div className="font-bold text-lg">Atomify</div>
+          <div className="font-bold text-xl">Naviga<span className="text-green-500">tion</span></div>
           <button
             className="text-black text-2xl"
             onClick={toggleNav}
